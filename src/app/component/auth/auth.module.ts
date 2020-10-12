@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
 import { CoreModule } from '../core/core.module';
 import { InputcolorDirective } from '../../directives/inputcolor.directive';
 import { SharedModule } from '@shared/shared.module';
@@ -11,6 +12,7 @@ import {
 } from './components';
 import { AuthSelectors } from './store/auth.selectors';
 import { ConfirmRestorePasswordComponent } from './components/confirm-restore-password/confirm-restore-password.component';
+import { ErrorMessageComponent } from './components/error-message/error-message.component';
 
 @NgModule({
   declarations: [
@@ -20,12 +22,13 @@ import { ConfirmRestorePasswordComponent } from './components/confirm-restore-pa
     InputcolorDirective,
     SubmitEmailComponent,
     RestoreComponent,
-    ConfirmRestorePasswordComponent
+    ConfirmRestorePasswordComponent,
+    ErrorMessageComponent
   ],
   imports: [
     CoreModule,
     SharedModule,
-
+    ReactiveFormsModule,
   ],
   entryComponents: [
     SignInComponent,
